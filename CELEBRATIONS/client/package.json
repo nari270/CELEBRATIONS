@@ -1,29 +1,9 @@
 {
-    "name": "celebrations-restaurant",
-    "version": "1.0.0",
-    "description": "A restaurant website project",
-    "main": "server.js",
-    "scripts": {
-      "start": "node server.js",
-      "server": "nodemon server.js",
-      "client": "cd client && npm start",
-      "mobile": "cd mobile && npm start",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Your Name",
-    "license": "MIT",
-    "dependencies": {
-      "express": "^4.17.1",
-      "knex": "^0.21.17",
-      "sqlite3": "^5.0.2",
-      "react": "^17.0.2",
-      "react-dom": "^17.0.2",
-      "react-scripts": "4.0.3",
-      "react-router-dom": "^5.2.0",
-      "axios": "^0.24.0"
-    },
-    "devDependencies": {
-      "nodemon": "^2.1.7"
-    }
+  "name": "celebrations-restaurant",
+  "version": "1.0.0",
+  "description": "A restaurant website project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
   }
-  
+}

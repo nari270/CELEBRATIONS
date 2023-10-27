@@ -1,18 +1,29 @@
 const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const menuRoutes = require('./routes/menuRoutes');
+const reservationRoutes = require('./routes/reservationRoutes');
+
 const app = express();
-const port = process.env.PORT || 3000; // You can set the port as needed
+const port = process.env.PORT || 3000;
 
-// Middleware to serve static files
-app.use(express.static('client/public'));
+// Middleware
+app.use(express.json());
+app.use(cors());
 
-// Define API routes
-const menuRoutes = require('./server/routes/menuRoutes');
-const reservationRoutes = require('./server/routes/reservationRoutes');
+// Connect to your database (replace with your database URL)
+mongoose.connect('mongodb://localhost/celebrations', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to the database');
+  })
+  .catch((error) => {
+    console.error('Database connection error:', error);
+  });
 
-app.use('/api/menu', menuRoutes);
-app.use('/api/reservation', reservationRoutes);
+// Routes
+app.use('/menu', menuRoutes);
+app.use('/reservations', reservationRoutes);
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

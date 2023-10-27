@@ -1,27 +1,16 @@
 import React from 'react';
-import './Menu.css';
 
-const Menu = () => {
-  const menuItems = [
-    { id: 1, title: 'Home' },
-    { id: 2, title: 'About' },
-    { id: 3, title: 'Services' },
-    { id: 4, title: 'Contact' },
-  ];
-
+function Menu() {
   return (
     <div className="menu">
-      <ul className="menu-list">
-        {menuItems.map((item) => (
-          <li key={item.id} className="menu-item">
-            <a href="#" className="menu-link">
-              {item.title}
-            </a>
-          </li>
-        ))}
+      <h2>Menu</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
       </ul>
     </div>
   );
-};
+}
 
 export default Menu;
